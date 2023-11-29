@@ -4,12 +4,11 @@ input {
 }
 
 input:enabled {
-    background-color: aliceblue;
-    
+    background-color: aliceblue;   
 }
 
-input:focus {
-    outline: 1px solid red;
+input:required {
+    outline: 2px solid red;
 }
 
 button {
