@@ -1,0 +1,41 @@
+div {
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div + p {
+    color: coral;
+    font-weight: bolder;
+}
+
+div + p + p {
+    color: brown;
+}
+
+div + p + p + p {
+    color: brown;
+}
+
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+}
+
+h1 + p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    text-decoration: underline;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+ul + p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    text-decoration: underline;
+}
+
