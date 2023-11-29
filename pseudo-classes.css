@@ -1,0 +1,25 @@
+input {
+    margin: 5px;
+    border-radius: 5px;
+}
+
+input:enabled {
+    background-color: aliceblue;
+    
+}
+
+input:focus {
+    outline: 1px solid red;
+}
+
+button {
+    border-radius: 5px;
+}
+
+button:enabled {
+    background-color: aliceblue;
+}
+
+button:hover {
+    outline: 1px solid red;
+}
