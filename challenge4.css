@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    border: 3px solid black;
+    width: 600px;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+div {
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-box {
+    column-gap: 20px;
+    flex-direction: row-reverse;
+    border: 2px solid red;
+}
+
+.vertical-box {
+    border: 2px solid red;
+    flex-direction: column-reverse;
+
+}
+
+
+.card {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue-card {
+    background-color: blue;
+}
+
+.red-card {
+    background-color: red;
+}
+
+.green-card {
+    background-color: lightgreen;
+}
+
+.orange-card {
+    background-color: orange;
+}
+
+.pink-card {
+    background-color: plum;
+}
+
+.grey-card {
+    background-color: grey;
+}
+
+.light-blue-card {
+    background-color: lightblue;
+}
+
+.dark-blue-card {
+    background-color: skyblue;
+}
