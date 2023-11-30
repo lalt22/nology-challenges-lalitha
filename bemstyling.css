@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.section1__border--green-dash {
+    border: 3px dashed green;
+}
+
+.section1__p--blue-line {
+    text-decoration: line-through;
+    color: blue;
+}
+
+.section2__border--coral {
+    border: 2px solid coral;
+}
+
+.section2__header {
+    text-align: center;
+}
+
+.section2__p--blue-line-r {
+    text-decoration: line-through;
+    color: blue;
+    text-align: right;
+}
