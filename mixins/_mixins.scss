@@ -1,0 +1,15 @@
+@mixin div-font-style {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    padding: 10px;
+}
+
+@mixin outline-decoration-color($decoration, $color) {
+    border: 2px $decoration $color;
+}
+
+@mixin div-background-color($color) {
+    background-color: $color;
+}
