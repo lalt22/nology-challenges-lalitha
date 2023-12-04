@@ -13,10 +13,12 @@ console.log("hamburger" + "s");
 */
 console.log("1" + "3");
 
-//All other operations (-, /, *) will do the numeric operation
+//All other operations (-, /, *) will do the numeric operation, regardless of whether
+//wrapped as string or not
 /*
     "1" - "3" = -2
     "1" - 3 = -2
+    1 - 3 = -2
 */
 console.log("1" - "3");
 console.log("johnny" - 5);
