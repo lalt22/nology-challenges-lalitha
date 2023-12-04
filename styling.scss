@@ -1,0 +1,72 @@
+@use "./media-q-mixins";
+
+//Set a deault media query to save time
+
+.flag-wrapper {
+    display: flex;
+    @include media-q-mixins.small {
+        flex-direction: column;
+    }
+    @include media-q-mixins.medium {
+        flex-direction: row;
+    }
+    @include media-q-mixins.large {
+        flex-direction: row;
+    }
+}
+
+.flag {
+    @include media-q-mixins.small {
+        width: auto;
+        height: 100px;
+    }
+    @include media-q-mixins.medium {
+        width: 100%;
+        height: 300px;
+    }
+    @include media-q-mixins.large {
+        width: 100%;
+        height: 300px;
+    }   
+}
+
+.flag__stripe1{
+    @include media-q-mixins.small {
+        background-color: black;
+    }
+
+    @include media-q-mixins.medium {
+        background-color: black;
+    }
+
+    @include media-q-mixins.large {
+        background-color: green;
+    }
+}
+
+.flag__stripe2 {
+    @include media-q-mixins.small {
+        background-color: red;
+    }
+    @include media-q-mixins.medium {
+        background-color: red;
+    }
+
+    @include media-q-mixins.large {
+        background-color: white;
+    }
+}
+
+.flag__stripe3 {
+    @include media-q-mixins.small {
+        background-color: yellow;
+    }
+
+    @include media-q-mixins.medium {
+        background-color: yellow;
+    }
+
+    @include media-q-mixins.large {
+        background-color: orange;
+    }
+}

@@ -1,13 +1,85 @@
-div {
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.flag-wrapper {
+  display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .flag-wrapper {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .flag-wrapper {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .flag-wrapper {
+    flex-direction: row;
+  }
 }
 
-div > h1 {
-    color: purple;
-    text-decoration: underline;
+@media only screen and (max-width: 600px) {
+  .flag {
+    width: auto;
+    height: 100px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .flag {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .flag {
+    width: 100%;
+    height: 300px;
+  }
 }
 
-div > p {
-    color: grey;
+@media only screen and (max-width: 600px) {
+  .flag__stripe1 {
+    background-color: black;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .flag__stripe1 {
+    background-color: black;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .flag__stripe1 {
+    background-color: green;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .flag__stripe2 {
+    background-color: red;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .flag__stripe2 {
+    background-color: red;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .flag__stripe2 {
+    background-color: white;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .flag__stripe3 {
+    background-color: yellow;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .flag__stripe3 {
+    background-color: yellow;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .flag__stripe3 {
+    background-color: orange;
+  }
 }
