@@ -23,3 +23,29 @@ console.log("1" + "3");
 console.log("1" - "3");
 console.log("johnny" - 5);
 console.log(99 * "luftbaloons")
+
+// ========  VARIABLES ========
+var firstName;
+var lastName;
+var age;
+var ageFloat;
+var addString;
+
+firstName = "Lalitha";
+lastName = "Seshadri";
+age = "22";
+ageFloat = "22.9";
+addString = 15;
+
+console.log("Hi my name is " + firstName + " " + lastName + " and I am " + age + " years old");
+
+
+//To get the integer value of a number string, use parseInt for whole numbers
+age = parseInt(age);
+console.log(age + addString);
+
+//To get float/decimal value of a number string, use parseFloat for decimal numbers
+ageFloat = parseFloat(ageFloat)
+console.log(ageFloat + addString);
+
+
