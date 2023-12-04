@@ -69,7 +69,7 @@ console.log(firstName);
 // !(10 % 2); // 10 % 2 = 0 ==> !(0) = NOT FALSE ==> true
 // !!!!((10 % 7) % 3); // 10 % 7 = 3 ==> 3 % 3 = 0 ==> !(0) = 1 ==> !(1) = 0 ==> !(0) = 1 ==> !(1) ==> 0 ==> false
 // 10 % 3 === -1 % 2; // LHS: 10 % 3 = 1  ==> RHS: 1 ==> true
-//(892783 != "89278" + 3) == 0; //true ==> automatic type conversion in comparing causes evaluation of "89278" + 3 to = 89281
+//(892783 != "89278" + 3) == 0; //true ==> string concat means the bracket statement is true (thus == 1). Then we compare if it equal to 0. 1 != 0, thus false
 
 // true && false; //false ==> both values must be true when using && for the result to be true
 // false || true; //true ==> only one value needs to be true when using || for the result to be true
@@ -85,7 +85,42 @@ console.log(firstName);
 
 //10 && 123 && -1 && 3; //true ==> negative numbers (other than -0) are truthy values
 //10 && 123 && 0 && 3; //false ==> 0 is a falsy value
-// (10 && (123 || "") && parseInt("Roisin")) || 23 / 23 - 1; 
-// 3 && "Calum" && ("" || 26);
-// 3 && "Remi" && (null || 86 * 0 || ("" + 1 && "Cat" + "Dog"));
+// (10 && (123 || "") && parseInt("Roisin")) || 23 / 23 - 1; //true ==> 
+/*(123 || "") = 1 (equivalent to 1 || 0 as seen above). 
+    (10 && (123 || "")) == (10 && 1) == (1 && 1) == 1
+    parseInt("Roisin") = NaN == "falsy"
+    (10 && (123 || "") && parseInt("Roisin")) == (1 && 0) == 0
+    23/23-1 == 23/22 == truthy (non-zero number) == 1
+    (10 && (123 || "") && parseInt("Roisin")) || 23 / 23 - 1 == (0 || 1) == 1
+    Thus, since final evaulation = 1, result is true
+*/
+// 3 && "Calum" && ("" || 26); //true
+/*
+    3 = 1
+    "Calum" = 1
+    "" = 0
+    26 = 1
+
+    3 && "Calum"  == 1 && 1 == 1
+    "" || 26 == 0 || 1 == 1
+     3 && "Calum" && ("" || 26) == 1 && 1 == 1
+    
+     Final evaluation = 1, result is true
+*/
+// 3 && "Remi" && (null || 86 * 0 || ("" + 1 && "Cat" + "Dog")); //true
+/*
+    3 = 1
+    "Remi" = 1
+    null = 0
+    86*0 = 0
+    "" + 1= 0 (string concat, turns this into "1" which is now truthy)
+    "Cat" + "Dog" = 1
+
+    Working brackets first
+    "" + 1 && "Cat" + "Dog" = 1 && 1 == 1
+    null || 86 * 0 || ("" + 1 && "Cat" + "Dog") = 0 || 0 || 1 == 1
+    3 && "Remi" && (null || 86 * 0 || ("" + 1 && "Cat" + "Dog")) == 1 && 1 && 1 == 1
+
+    Therefore, final eval = 1, result is true
+*/
 
