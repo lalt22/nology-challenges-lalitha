@@ -69,7 +69,7 @@ console.log(firstName);
 // !(10 % 2); // 10 % 2 = 0 ==> !(0) = NOT FALSE ==> true
 // !!!!((10 % 7) % 3); // 10 % 7 = 3 ==> 3 % 3 = 0 ==> !(0) = 1 ==> !(1) = 0 ==> !(0) = 1 ==> !(1) ==> 0 ==> false
 // 10 % 3 === -1 % 2; // LHS: 10 % 3 = 1  ==> RHS: 1 ==> true
-//(892783 != "89278" + 3) == 0; //true ==> string concat means the bracket statement is true (thus == 1). Then we compare if it equal to 0. 1 != 0, thus false
+//(892783 != "89278" + 3) == 0; //true ==> string concat means the bracket statement is false (thus == 0). Then we compare if it equal to 0. 0 == 0, thus false
 
 // true && false; //false ==> both values must be true when using && for the result to be true
 // false || true; //true ==> only one value needs to be true when using || for the result to be true
