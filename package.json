@@ -1,0 +1,12 @@
+{
+  "name": "nology-challenges-lalitha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "functions.js",
+  "scripts": {
+    "test": "test js2.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
