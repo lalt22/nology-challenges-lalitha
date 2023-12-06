@@ -4,7 +4,7 @@ moonOrbits(365) => 13.359
 */
 
 function moonOrbits(orbits) {
-    return (orbits/27).toFixed(3);
+    return (orbits/27.3).toFixed(3);
 }
 
 console.log(moonOrbits(54));
@@ -39,11 +39,11 @@ ageInSeconds(32) => 1009152000
 
 //WHAT ABOUT LEAP YEARSSSSSSSSS
 function ageInDays(year) {
-    return 32*365;
+    return year*365;
 }
 
 function ageInSeconds(year) {
-    return (32*365*24*60*60);
+    return (year*365*24*60*60);
 }
 
 console.log(ageInDays(32));

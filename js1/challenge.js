@@ -71,12 +71,30 @@
   * If the variable is not any of those types output "I don't know what this thing is"
   *
   * @returns {string} This is a string
+  * 
+  * TODO: RE-DO THIS
   */
  const thing = "I am a thing";
  
  export const findType = () => {
-    return (typeof thing);
- };
+
+  var type;
+    switch (typeof thing) {
+      case "string":
+        type = "string";
+        break;
+      case "number":
+        type = "number";
+        break;
+      case "boolean":
+        type = "number";
+        break;
+      default:
+        return "I don't know what this thing is";
+    }
+    return `This is a ${type}`;
+    
+};
  
  /**
   * A function to programmatically decide if a name is suitable for a name tag.
@@ -88,8 +106,9 @@
  const nameTagOption = "Timothy";
  
  export const getIsValidOnNameTag = () => {
-   if (nameTagOption.length <= 8 && (nameTagOption.charAt(0) == nameTagOption.charAt(0).toUpperCase)) {
-       return true;
+   if (nameTagOption.length <= 8 && 
+      (nameTagOption !== nameTagOption.toLowerCase())) {
+      return true;
    }
    else return false;
  };
@@ -133,5 +152,6 @@
  const pascalCaseVariableName = "IWantToBeSnakeCase";
  
  export const convertPascalCaseToSnakeCase = () => {
-   return pascalCaseVariableName.split(/?=[A-Z]/).join('_').toLowerCase();
+   return pascalCaseVariableName.split(/(?=[A-Z])/).join('_').toLowerCase();
  };
+
