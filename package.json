@@ -1,0 +1,23 @@
+{
+    "name": "nology-challenges-lalitha",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+      "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/jest": "^26.0.20",
+      "@babel/core": "^7.12.10",
+      "@babel/preset-env": "^7.12.11",
+      "babel-jest": "^26.6.3",
+      "jest": "^26.6.3"
+    },
+    "dependencies": {
+      "babel": "^6.23.0"
+    }
+  }
