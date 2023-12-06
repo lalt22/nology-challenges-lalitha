@@ -216,18 +216,24 @@
     //Break string into chunks of up to 3
     const letters = toEncrypt.split("");
     //array to hold arrays of chunks
-    const chunks = [];
+    const chunks = toEncrypt.match(/.{1,3}./g);
 
-    //while we have letters to chunk
-    while(letters.length) {
-        //makes a 2d array
-        chunks.push(letters.splice(3).join(""));
+    if (chunks == null) {
+        return "";
     }
-    // for (let i = 0; chunks.length; i++) {
-    //     let chunkElem = chunks[i];
-    //     for (int j =)
-    // }
+
+    let outputString = ""
+    for (let i = 0; i < chunks.length; i++) {
+        // let chunkString = chunks[i];
+        // let chunkStringElem = chunkString[i];
+        // outputString += chunkStringElem;
+        for (let j = 0; j < chunks.length; j++) {
+            let nextChunkString = chunks[j];
+            let nextChunkStringElem = nextChunkString[i];
+            outputString += nextChunkStringElem;
+        }
+    }
      
-    return;
+    return outputString;
   };
 
