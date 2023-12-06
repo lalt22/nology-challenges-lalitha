@@ -213,27 +213,29 @@
   // };
   
   export const encryptString = (toEncrypt) => {
-    //Break string into chunks of up to 3
-    const letters = toEncrypt.split("");
-    //array to hold arrays of chunks
-    const chunks = toEncrypt.match(/.{1,3}./g);
-
-    if (chunks == null) {
+    if (!toEncrypt) {
         return "";
     }
 
-    let outputString = ""
-    for (let i = 0; i < chunks.length; i++) {
-        // let chunkString = chunks[i];
-        // let chunkStringElem = chunkString[i];
-        // outputString += chunkStringElem;
-        for (let j = 0; j < chunks.length; j++) {
-            let nextChunkString = chunks[j];
-            let nextChunkStringElem = nextChunkString[i];
-            outputString += nextChunkStringElem;
+    const substrings = [];
+    let currentSubstring = "";
+
+    //Get our array of substrings
+    for (let i = 0; i < toEncrypt.length; i++) {
+        currentSubstring += toEncrypt[i];
+
+        if (currentSubstring.length == 3 || i === toEncrypt.length -1) {
+            substrings.push(currentSubstring);
+            currentSubstring = "";
         }
     }
-     
-    return outputString;
-  };
 
+    let newString = "";
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < substrings.length; j++) {
+            newString += substrings[j].charAt(i);
+        }
+    }
+
+    return newString;
+};
