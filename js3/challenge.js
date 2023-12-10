@@ -144,11 +144,9 @@
    */
   
   export const reverseOrder = (toReverseArr) => {
-      const newArr = [];
-      for (let i = toReverseArr.length-1; i == 0; i--) {
-          newArr.push(toReverseArr[i]);
-      }
-    return newArr;
+    const newArr = [...toReverseArr];
+
+    return newArr.reverse();
   };
   
   /**
@@ -216,7 +214,6 @@
     if (!toEncrypt) {
         return "";
     }
-
     const substrings = [];
     let currentSubstring = "";
 
@@ -229,13 +226,12 @@
             currentSubstring = "";
         }
     }
-
     let newString = "";
+    //Double for loop to index a specific char from a specific substring
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < substrings.length; j++) {
             newString += substrings[j].charAt(i);
         }
     }
-
     return newString;
 };
