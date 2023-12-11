@@ -73,14 +73,14 @@ Tips
 You may need to google how to generate, you can use the Math.random() API
 */
 
-const randNums = [];
-while (randNums.length < 15) {
-    let randNum = Math.floor(Math.random()*16)
-    if (!randNums.includes(randNum)) {
-        randNums.push(randNum);
-    }
-}
-console.log(randNums);
+// const randNums = [];
+// while (randNums.length < 15) {
+//     let randNum = Math.floor(Math.random()*16)
+//     if (!randNums.includes(randNum)) {
+//         randNums.push(randNum);
+//     }
+// }
+// console.log(randNums);
 
 
 /*
@@ -102,47 +102,88 @@ Add validation to your function to prevent negative values for n and r
 Add validation to ensure n < r when isUnique is true
 */
 
-function generateRandomNums(num, range, isUnique) {
-    if (isUnique) {
-        if (num > range) {
-            return "Invalid inputs: range must be higher than num";
+// function generateRandomNums(num, range, isUnique) {
+//     if (isUnique) {
+//         if (num > range) {
+//             return "Invalid inputs: range must be higher than num";
+//         }
+//     }
+//     if (num < 0 || range < 0) {
+//         return "Invalid inputs: num and range must be positive numbers";
+//     }
+
+//     let numCount = 0;
+//     const randNums = [];
+//     while (numCount < num) {
+//         randNum = Math.floor(Math.random()*(range+1));
+//         if (isUnique) {
+//             if (!randNums.includes(randNum)) {
+//                 randNums.push(randNum);
+//                 numCount++;
+//             }
+//         }
+//         else {
+//             randNums.push(randNum);
+//             numCount++;
+//         } 
+//     }
+//     return randNums;
+// }
+
+// console.log(generateRandomNums(10, 10, false));
+// console.log(generateRandomNums(10, 10, true));
+
+// console.log(generateRandomNums(-1, 2, true));
+// console.log(generateRandomNums(4, 2, true));
+
+
+// function filterString(string) {
+//     const trimmedString = string.replace(/[^a-zA-Z]/ig, "");
+//     console.log(trimmedString);
+//     const stringArr = trimmedString.split("");
+
+//     return stringArr.map((element, index) => index % 2 == 0 ? element.toUpperCase() : element.toLowerCase());
+// }
+
+// console.log(filterString('898    te%^$£"&*()st str3552621ing'));
+
+
+
+// function fizzBuzz(mixedArray){
+//     const numArray = mixedArray.filter((element) => (Number(element) > 0));
+//     console.log(numArray);
+
+//     const buzzedArray = numArray.map((element) => {
+//         if (element % 15 === 0) {
+//             return "FizzBuzz";
+//         }
+//         else if (element % 3 === 0) {
+//             return "Fizz";
+//         }
+//         else if (element % 5 === 0) {
+//             return "Buzz";
+//         }
+//         else return String(element);
+//     });
+
+//     console.log(buzzedArray);
+//   return buzzedArray;
+// };
+
+// console.log(fizzBuzz([-1, "disco", "3", 5, "15", 2, 0]));
+
+function totalNestedScoresArr(scoresArr) {
+    let finalArr = [];
+    for (let i = 0; i < scoresArr.length; i ++) {
+        let innerArrSum = 0;
+        console.log(scoresArr[i]);
+        for (let j = 0; j < scoresArr[i].length; j++) {
+          innerArrSum += scoresArr[i][j];
         }
+        finalArr.push(innerArrSum);
     }
-    if (num < 0 || range < 0) {
-        return "Invalid inputs: num and range must be positive numbers";
-    }
-
-    let numCount = 0;
-    const randNums = [];
-    while (numCount < num) {
-        randNum = Math.floor(Math.random()*(range+1));
-        if (isUnique) {
-            if (!randNums.includes(randNum)) {
-                randNums.push(randNum);
-                numCount++;
-            }
-        }
-        else {
-            randNums.push(randNum);
-            numCount++;
-        } 
-    }
-    return randNums;
-}
-
-console.log(generateRandomNums(10, 10, false));
-console.log(generateRandomNums(10, 10, true));
-
-console.log(generateRandomNums(-1, 2, true));
-console.log(generateRandomNums(4, 2, true));
+  return finalArr;
+};
 
 
-function filterString(string) {
-    const trimmedString = string.replace(/[^a-zA-Z]/ig, "");
-    console.log(trimmedString);
-    const stringArr = trimmedString.split("");
-
-    return stringArr.map((element, index) => index % 2 == 0 ? element.toUpperCase() : element.toLowerCase());
-}
-
-console.log(filterString('898    te%^$£"&*()st str3552621ing'));
+console.log(totalNestedScoresArr[[1, 2, 3]]);

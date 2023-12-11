@@ -82,12 +82,12 @@
   
   export const moveFirstAndLastItems = (itemsArr) => {
       const newArr = [];
-      let lastItem = itemsArr[itemsArr.length-1];
+      let lastItem = itemsArr.pop();
       newArr.push(lastItem);
 
-      for (let i = 0; i < itemsArr.length-1; i++) {
-          newArr.push(itemsArr[i]);
-      }
+    for (let i = 0; i < itemsArr.length-1; i++) {
+        newArr.push(itemsArr[i]);
+    }
     return newArr;
   };
   

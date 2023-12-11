@@ -22,7 +22,7 @@
  */
 
  export const removeFalseValues = (booleanArr) => {
-     let newArr = booleanArr.filter((element) => element !== false);
+     let newArr = booleanArr.filter((element) => element === true);
     return newArr;
   };
   
@@ -102,7 +102,7 @@
    */
   
   export const filterBooksBySearch = (booksArr, searchTerm) => {   
-    return booksArr.filter ((element) => element.includes(searchTerm));
+    return booksArr.filter((element) => element.includes(searchTerm));
   };
   
   /**
@@ -179,22 +179,25 @@
    * @return {string[]} [ "Fizz", "Buzz", "FizzBuzz", "2" ]
    */
 
-    function checkPositiveInteger(element) {
-        const isInteger = Number.isInteger(element);
-
-        if (isInteger > 0 || Math.sign(element) === 1) {
-            return true;
-        }
-        return false;
-    }
-
   export const fizzBuzz = (mixedArray) => {
-      const numArray = mixedArray.filter(checkPositiveInteger);
+    const numArray = mixedArray.filter((element) => (Number(element) > 0));
+    console.log(numArray);
 
-    return numArray.map((element) => element % 15 ? "FizzBuss" :
-                                    element % 5 ? "Buzz" :
-                                    element % 3 ? "Fizz":
-                                    element);
+    const buzzedArray = numArray.map((element) => {
+        if (element % 15 === 0) {
+            return "FizzBuzz";
+        }
+        else if (element % 3 === 0) {
+            return "Fizz";
+        }
+        else if (element % 5 === 0) {
+            return "Buzz";
+        }
+        else return String(element);
+    });
+
+    console.log(buzzedArray);
+    return buzzedArray;
   };
 
 
