@@ -204,8 +204,9 @@
           accArr[listIndex].push(char);
           return accArr;
       }, [])
-      //Also map lists so that list strings join together
+      //Also map lists so that list array elements join together
       .map((list) => list.join(""))
+      //join all list arrays together
       .join("");
     return encryptedMessage;
   };
