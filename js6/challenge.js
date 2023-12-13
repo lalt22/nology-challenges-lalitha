@@ -69,7 +69,7 @@
     if (!user.hasOwnProperty('username')) {
         user.username = username;
     }
-    return user;
+    return user; 
   };
   
   /**
@@ -144,13 +144,16 @@
    * @returns {{id: number, location: string, sku: string, name: string, price: number, isAvailable: boolean}}
    */
   export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
-    const mergedData = {
-        id: furnitureLocationData.id,
-        location: furnitureLocationData.location,
-        sku: furnitureLocationData.sku,
-        name: furnitureProductData.name,
-        price: furnitureProductData.price,
-        isAvailable: furnitureProductData.isAvailable
-    };
+    // const mergedData = {
+    //     id: furnitureLocationData.id,
+    //     location: furnitureLocationData.location,
+    //     sku: furnitureLocationData.sku,
+    //     name: furnitureProductData.name,
+    //     price: furnitureProductData.price,
+    //     isAvailable: furnitureProductData.isAvailable
+    // };
+
+    //SIMPLER _ USE A SPREAD
+    const mergedData = {...furnitureLocationData, ...furnitureProductData};
     return mergedData;
   };

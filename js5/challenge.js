@@ -116,10 +116,13 @@
    */
   
   export const checkPrimaryColours = (coloursArr) => {
-    const primaryColours = ["red", "blue", "yellow"];
-    let mappedArray = coloursArr.map((element) => primaryColours.includes(element) ? "true" : "false");
+    // const primaryColours = ["red", "blue", "yellow"];
+    // let mappedArray = coloursArr.map((element) => primaryColours.includes(element) ? "true" : "false");
 
-    return mappedArray.includes("false") ? false : true;
+    // return mappedArray.includes("false") ? false : true;
+
+    //SMOOTHER
+    return coloursArr.every((colour) => ["red", "blue", "yellow"].includes(colour));
   };
   
   /**
@@ -136,9 +139,10 @@
    */
   
   export const checkStringPalindrome = (stringOne) => {
-      const arrayValues = stringOne.split("");
-      const reverseArrayValues = arrayValues.reverse();
-      const reverseString = reverseArrayValues.join("");
+      const reverseString = stringOne
+                        .split("")
+                        .reverse()
+                        .join("");
       
 
     return reverseString === stringOne;
@@ -157,7 +161,8 @@
   export const totalNestedScoresArr = (scoresArr) => {
       //scoresArr.map iterates over every sub-array in scoresArr
       //subArray.reduce adds all the values in the subArray
-    return scoresArr.map((subArray) => subArray.reduce((accArr, val) => accArr + val, 0));
+    // return scoresArr.map((subArray) => subArray.reduce((accArr, val) => accArr + val, 0));
+    return scoresArr.map(totalScoresArr);
   };
   
   /**
@@ -191,22 +196,29 @@
   
   export const encryptString = (toEncrypt) => {
       const characters = toEncrypt.split("");
-
+    
+      let modulus = 3;
+      //Create modulus numbers of 0-filled arrays, then remap with empty arrays []
+      let accArrays = new Array(modulus).fill(0).map(() => []);
       //use reduce with accumulation array (accArr)
       const encryptedMessage = characters.reduce((accArr, char, index) => {
         // Will create lists with indexes 0, 1, 2
-          const listIndex = index % 3;
-          //If the array doesn't already exist, make it
-          if (!accArr[listIndex]) {
-              accArr[listIndex] = [];
-          }
+          const listIndex = index % modulus
           //Otherwise push char to associated list
           accArr[listIndex].push(char);
           return accArr;
-      }, [])
+      }, accArrays)
       //Also map lists so that list array elements join together
       .map((list) => list.join(""))
       //join all list arrays together
       .join("");
     return encryptedMessage;
+
+
+    //SMOOTHER
+    // return toEncrypt
+    //     .split("")
+    //     .reduce((accArr, cur, i) => {accArr[i%3].push(cur); return accArr}, [[], [],[]])
+    //     .flat()
+    //     .join("");
   };
