@@ -156,4 +156,4 @@
     //SIMPLER _ USE A SPREAD
     const mergedData = {...furnitureLocationData, ...furnitureProductData};
     return mergedData;
-  };
+  };  
